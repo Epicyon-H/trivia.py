@@ -71,7 +71,6 @@ class TriviaWrapper():
 
 
     def question(self, amount=10, category=None, difficulty=None, quizType=None):
-        print(amount, category, difficulty, quizType)
         if not(amount and isinstance(amount, int) and amount>0) or (category and (not isinstance(category, int) or not(0 < category < 25))) or (difficulty and difficulty not in self.difficulties) or (quizType and quizType not in self.types):
             raise InvalidParameters
             return
