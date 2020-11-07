@@ -1,5 +1,5 @@
 import pathlib
-from setuptools import setup, find_packages
+from setuptools import setup
 
 HERE = pathlib.Path(__file__).parent
 
@@ -20,7 +20,7 @@ setup(
         "Programming Language :: Python :: 3.7",
         "Programming Language :: Python :: 3.8",
     ],
-    packages=find_packages(),
+    packages=['trivia'],
     include_package_data=True,
     install_requires=["aiohttp", "aiodns"],
 )
