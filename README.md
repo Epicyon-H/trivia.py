@@ -24,7 +24,7 @@ pip install trivia.py
     The category you wish to request from (refer to table below for which number correlates to which category), defaults to `None` returning all categories.
     
 | Int | Category                              |
-| --- |:-------------------------------------:|
+| --- |:------------------------------------- |
 | 0   | All categories                        |
 | 1   | General Knowledge                     |
 | 2   | Entertainment: Books                  |
