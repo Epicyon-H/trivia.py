@@ -92,20 +92,20 @@ Return a list of dicts which contains the keys below
 
 **Basic code example**
 ```python
-from trivia import Trivia
+from trivia import trivia
 
-questions = Trivia.question(amount=1, category=2, difficulty='easy', quizType='boolean')
+questions = trivia.question(amount=1, category=2, difficulty='easy', quizType='boolean')
 ```
 
 
 **An example of the return**
 ```python
 [{
-    'category': 'Science: Computers', 
+    'category': 'Entertainment: Books', 
     'type': 'boolean', 
     'difficulty': 'easy', 
-    'question': 'Ada Lovelace is often considered the first computer programmer.', 
+    'question': 'The Harry Potter series of books, combined, are over 1,000,000 words in length.', 
     'correct_answer': 'True', 
     'incorrect_answers': ['False']
-    }]
+}]
 ```
