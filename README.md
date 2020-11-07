@@ -14,7 +14,9 @@ pip install trivia.py
 
 # Usage
 
-`question(parameters)`
+```python
+question(parameters)
+```
 
 **Parameters:**
 - amount (*int*):
