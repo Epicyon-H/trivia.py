@@ -66,7 +66,6 @@ question(parameters)
 
 **Return:**
 
-
 Return a list of dicts which contains the keys below
 - category (*str*):
     The category the question comes from.
