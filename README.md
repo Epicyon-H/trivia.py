@@ -22,6 +22,7 @@ pip install trivia.py
 
 - category (*int*):
     The category you wish to request from (refer to table below for which number correlates to which category), defaults to `None` returning all categories.
+    
 | Int | Category                              |
 | --- | -------------------------------------:|
 | 0   | All categories                        |
@@ -74,5 +75,6 @@ questions = Trivia.question(amount=1, category=2, difficulty='easy', quizType='b
     'difficulty': 'easy', 
     'question': 'Ada Lovelace is often considered the first computer programmer.', 
     'correct_answer': 'True', 
-    'incorrect_answers': ['False']}]
+    'incorrect_answers': ['False']
+    }]
 ```
