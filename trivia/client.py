@@ -70,12 +70,15 @@ class TriviaWrapper():
         return [question for question in self.questions if (question['category'] == stringCategory or not category) and (question['difficulty'] == difficulty or not difficulty) and (question['type'] == quizType or not quizType)][0:amount]
 
 
-    def question(self, amount=10, category=0, difficulty=None, quizType=None):
-        if not(amount and isinstance(amount, int) and amount>0) or (amount and (not isinstance(category, int) or not(0 < category < 25))) or (difficulty and difficulty not in self.difficulties) or (quizType and quizType not in self.types):
+    def question(self, amount=10, category=None, difficulty=None, quizType=None):
+        print(amount, category, difficulty, quizType)
+        if not(amount and isinstance(amount, int) and amount>0) or (category and (not isinstance(category, int) or not(0 < category < 25))) or (difficulty and difficulty not in self.difficulties) or (quizType and quizType not in self.types):
             raise InvalidParameters
             return
 
-        category += 8
+        if category:
+            category += 8
+
         query = 'https://opentdb.com/api.php?amount=' + str(amount) + ('&category='+str(category) if category else '') + ('&difficulty='+difficulty if difficulty else '')  + ('&type='+quizType if quizType else '') + '&token=' + self.token
 
         loop = asyncio.get_event_loop()
