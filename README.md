@@ -14,9 +14,7 @@ pip install trivia.py
 
 # Usage
 
-```python
-question(parameters)
-```
+`question(parameters)`
 
 **Parameters:**
 - amount (*int*):
@@ -24,7 +22,7 @@ question(parameters)
 
 - category (*int*):
     The category you wish to request from (refer to table below for which number correlates to which category), defaults to `None` returning all categories.
-    
+
 | Int | Category                              |
 | --- |:------------------------------------- |
 | 0   | All categories                        |
@@ -58,6 +56,27 @@ question(parameters)
 
 - quizType (*str*):
     The type of questions, can be `multiple` (multiple choice questions), or `boolean` (true/false questions). Defaults to `None` returning all questions types. 
+
+
+**Return:**
+Return a list of dicts which contains the keys below
+- category (*str*):
+    The category the question comes from.
+
+- type (*str*):
+    The type of question (multiple, or boolean).
+
+- difficulty (*str*):
+    The difficulty of the question.
+
+- question (*str*):
+    The text of the question.
+
+- correct_answer (*str*):
+    The correct answer.
+
+- incorrect_answer (*list*):
+    List of strings of all the incorrect answers.
 
 
 # Examples
