@@ -2,7 +2,8 @@
 
 An easy to use async python api wrapper for [Open Trivia DB](https://opentdb.com/api_config.php) with autocaching 
 
-
+**Note:**:
+There is an request limit of 1 category per request and a max of 50 questions per request
 
 
 # Installing
