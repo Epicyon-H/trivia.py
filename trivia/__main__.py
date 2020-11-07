@@ -70,7 +70,7 @@ class TriviaWrapper():
         return [question for question in self.questions if (question['category'] == stringCategory or not category) and (question['difficulty'] == difficulty or not difficulty) and (question['type'] == quizType or not quizType)][0:amount]
 
 
-    def questionRequest(self, amount=10, category=0, difficulty=None, quizType=None):
+    def question(self, amount=10, category=0, difficulty=None, quizType=None):
         if not(amount and isinstance(amount, int) and amount>0) or (amount and (not isinstance(category, int) or not(0 < category < 25))) or (difficulty and difficulty not in self.difficulties) or (quizType and quizType not in self.types):
             raise InvalidParameters
             return
@@ -88,5 +88,3 @@ class TriviaWrapper():
 
         self.questions.extend(questions)
         return questions
-
-trivia = TriviaWrapper()
