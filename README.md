@@ -3,6 +3,8 @@
 An easy to use python api wrapper for [Open Trivia DB](https://opentdb.com/api_config.php)
 
 
+
+
 # Installing
 
 Python 3.6 or higher is required
@@ -12,9 +14,13 @@ pip install trivia.py
 ```
 
 
+
+
 # Usage
 
-`question(parameters)`
+```python
+question(parameters)
+```
 
 **Parameters:**
 - amount (*int*):
@@ -59,6 +65,8 @@ pip install trivia.py
 
 
 **Return:**
+
+
 Return a list of dicts which contains the keys below
 - category (*str*):
     The category the question comes from.
@@ -79,6 +87,8 @@ Return a list of dicts which contains the keys below
     List of strings of all the incorrect answers.
 
 
+
+
 # Examples
 
 **Basic code example**
@@ -87,6 +97,7 @@ from trivia import Trivia
 
 questions = Trivia.question(amount=1, category=2, difficulty='easy', quizType='boolean')
 ```
+
 
 **An example of the return**
 ```python
