@@ -57,7 +57,7 @@ class TriviaWrapper():
         conn = aiohttp.TCPConnector(resolver=aiohttp.AsyncResolver())
         async with aiohttp.ClientSession(connector=conn) as session:
             async with session.get(query) as response:
-                r = json.loads(await response.text())
+                r = await response.json()
                 if r['response_code'] == 3:
                     self.token = (await self.request('https://opentdb.com/api_token.php?command=request'))['token']
 
