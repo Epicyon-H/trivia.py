@@ -1,6 +1,7 @@
 # trivia.py
 
-An easy to use async python api wrapper for [Open Trivia DB](https://opentdb.com/api_config.php) with autocaching 
+An easy to use python api wrapper for [Open Trivia DB](https://opentdb.com/api_config.php)
+
 
 **Note:**
 There is an request limit of 1 category per request and a max of 50 questions per request
@@ -95,7 +96,7 @@ Return a list of dicts which contains the keys below
 ```python
 from trivia import trivia
 
-questions = trivia.question(amount=1, category=2, difficulty='easy', quizType='boolean')
+questions = trivia.question(amount=1, category=2, difficulty='easy', quizType='multiple')
 ```
 
 
@@ -103,10 +104,10 @@ questions = trivia.question(amount=1, category=2, difficulty='easy', quizType='b
 ```python
 [{
     'category': 'Entertainment: Books', 
-    'type': 'boolean', 
-    'difficulty': 'easy', 
-    'question': 'The Harry Potter series of books, combined, are over 1,000,000 words in length.', 
-    'correct_answer': 'True', 
-    'incorrect_answers': ['False']
+    'type': 'multiple',
+    'difficulty': 'easy',
+    'question': 'Who wrote &quot;Harry Potter&quot;?',
+    'correct_answer': 'J.K. Rowling', 
+    'incorrect_answers': ['J.R.R. Tolkien', 'Terry Pratchett', 'Daniel Radcliffe']
 }]
 ```
