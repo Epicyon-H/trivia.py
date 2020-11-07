@@ -7,7 +7,7 @@ README = (HERE / "README.md").read_text()
 
 setup(
     name="trivia.py",
-    version="1.0.1",
+    version="1.0.2",
     description="A python wrapper for Open Trivia DB",
     long_description=README,
     long_description_content_type="text/markdown",
