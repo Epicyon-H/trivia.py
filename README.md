@@ -95,8 +95,11 @@ Return a list of dicts which contains the keys below
 **Basic code example**
 ```python
 from trivia import trivia
+import asyncio
 
-questions = trivia.question(amount=1, category=2, difficulty='easy', quizType='multiple')
+loop = asyncio.get_event_loop()
+
+questions = loop.run_until_complete(trivia.question(amount=1, category=2, difficulty='easy', quizType='multiple'))
 ```
 
 
