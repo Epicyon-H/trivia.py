@@ -1,6 +1,6 @@
 # trivia.py
 
-An easy to use python api wrapper for [Open Trivia DB](https://opentdb.com/api_config.php)
+An easy to use async python api wrapper for [Open Trivia DB](https://opentdb.com/api_config.php)
 
 
 **Note:**
