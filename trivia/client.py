@@ -1,5 +1,6 @@
 import aiohttp, aiodns, asyncio, json
 from random import shuffle
+from base64 import b64decode
 
 
 
@@ -69,6 +70,10 @@ class TriviaWrapper():
 
         return [question for question in self.questions if (question['category'] == stringCategory or not category) and (question['difficulty'] == difficulty or not difficulty) and (question['type'] == quizType or not quizType)][0:amount]
 
+    
+    def returnDecode(self, questions):
+        return [{k:(b64decode(v).decode('utf-8') if isinstance(v, str) else [b64decode(x).decode('utf-8') for x in v]) for k,v in question.items()} for question in questions]
+
 
     async def question(self, amount=10, category=None, difficulty=None, quizType=None):
         if not(amount and isinstance(amount, int) and amount>0) or (category and (not isinstance(category, int) or not(0 < category < 25))) or (difficulty and difficulty not in self.difficulties) or (quizType and quizType not in self.types):
@@ -78,13 +83,14 @@ class TriviaWrapper():
         if category:
             category += 8
 
-        query = 'https://opentdb.com/api.php?amount=' + str(amount) + ('&category='+str(category) if category else '') + ('&difficulty='+difficulty if difficulty else '')  + ('&type='+quizType if quizType else '') + '&token=' + self.token
+        query = 'https://opentdb.com/api.php?amount=' + str(amount) + ('&category='+str(category) if category else '') + ('&difficulty='+difficulty if difficulty else '')  + ('&type='+quizType if quizType else '') + '&encode=base64' + '&token=' + self.token
 
         questions = await self.request(query)
         if not questions['results']:
             questions = self.cacheRequest(amount=amount, category=category, difficulty=difficulty, quizType=quizType)
         else:
             questions = questions['results']
+            questions = self.returnDecode(questions)
         shuffle(questions)
 
         self.questions.extend(questions)
