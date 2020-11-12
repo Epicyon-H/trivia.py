@@ -1,6 +1,6 @@
 # trivia.py
 
-An easy to use async python api wrapper for [Open Trivia DB](https://opentdb.com/api_config.php)
+An easy to use python api wrapper for [Open Trivia DB](https://opentdb.com/api_config.php) with autocaching
 
 
 **Note:**
@@ -21,7 +21,7 @@ pip install trivia.py
 # Usage
 
 ```python
-question(parameters) #question is a coroutine and must be awaited, see examples at the bottom to see how to do this
+question(parameters)
 ```
 
 **Parameters:**
@@ -111,10 +111,10 @@ async def main():
 ```python
 [{
     'category': 'Entertainment: Books', 
-    'type': 'multiple',
-    'difficulty': 'easy',
-    'question': 'Who wrote &quot;Harry Potter&quot;?',
-    'correct_answer': 'J.K. Rowling', 
-    'incorrect_answers': ['J.R.R. Tolkien', 'Terry Pratchett', 'Daniel Radcliffe']
+    'type': 'multiple', 
+    'difficulty': 'easy', 
+    'question': 'What is the title of the first Sherlock Holmes book by Arthur Conan Doyle?',
+     'correct_answer': 'A Study in Scarlet', 
+     'incorrect_answers': ['The Sign of the Four', 'A Case of Identity', 'The Doings of Raffles Haw']
 }]
 ```
